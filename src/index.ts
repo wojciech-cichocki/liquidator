@@ -17,6 +17,12 @@ const NETWORK = Network.MAIN
 const connection = new Connection('https://ssc-dao.genesysgo.net', 'recent')
 
 const provider = new Provider(connection, secretWallet, { commitment: 'recent' })
+// LOCAL
+// const provider = Provider.local('https://api.mainnet-beta.solana.com', {
+//   // preflightCommitment: 'max',
+//   skipPreflight: true
+// })
+
 // @ts-expect-error
 const wallet = provider.wallet.payer as Account
 const { exchange: exchangeProgram, exchangeAuthority } = MAIN_NET
